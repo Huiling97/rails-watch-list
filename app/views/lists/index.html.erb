@@ -4,6 +4,7 @@
   <% @lists.each do |list| %>
     <li>
       <%= list.name %>
+      <%= link_to "View more details", list_path %>
     </li>
   <% end %>
 </ul>
