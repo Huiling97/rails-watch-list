@@ -1,12 +1,16 @@
-<h1>All available lists</h1>
+<%= render 'shared/banner' %>
 
-<%= link_to "Create new list", new_list_path %>
+<div class="container">
+  <div class="custom-container">
+    <h3>My Lists</h3>
+    <div>
+      <%= link_to "Create new list", new_list_path, class: "btn btn-flat"%>
+    </div>
+  </div>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li>
-      <%= list.name %>
-      <%= link_to "View more details", list_path(list) %>
-    </li>
-  <% end %>
-</ul>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= render 'shared/card', list: list %>
+    <% end %>
+  </div>
+</div>
