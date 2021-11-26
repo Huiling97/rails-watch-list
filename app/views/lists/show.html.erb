@@ -11,4 +11,20 @@
       <%= render 'shared/movieCard', bookmark: bookmark %>
     <% end %>
   </div>
+
+  <div class="custom-container">
+    <div class="card" style="width: 18rem;">
+      <ul class="list-group list-group-flush">
+        <% @list.reviews.each do |review| %>
+          <%= render 'reviews/reviewCard', review: review %>
+        <% end %>
+      </ul>
+    </div>
+
+    <%= simple_form_for [@list, @review] do |f| %>
+      <%= f.input :comments %>
+      <%= f.input :rating %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
