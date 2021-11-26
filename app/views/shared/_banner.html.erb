@@ -1,4 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  <h1>Save any kind of movies</h1>
-  <p>Classic</p>
+<% banner_img = banner_img || "sample" %>
+
+<% banner_content = banner_content || "Save any kind of movies" %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path banner_img, crop: :fill %>')">
+  <%= banner_content %>
 </div>
