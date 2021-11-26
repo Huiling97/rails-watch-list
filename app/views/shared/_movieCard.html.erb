@@ -1,0 +1,13 @@
+<div class="col">
+  <div class="card h-100">
+    <img src=<%= bookmark.movie.poster_url %> class="card-img-top" alt="<%= bookmark.movie %>">
+    <div class="card-body">
+      <h5 class="card-title"><%= bookmark.comment %></h5>
+      <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
+      <p class="card-text">
+        <%= bookmark.movie.title %>
+        <%= bookmark.movie.overview %>
+      </p>
+    </div>
+  </div>
+</div>

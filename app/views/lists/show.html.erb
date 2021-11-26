@@ -1,18 +1,14 @@
 <%= render 'shared/banner', banner_img: @list.photo.key, banner_content: @list.name %>
 
-<h1><%= @list.name %></h1>
+<div class="container">
+  <div class="custom-container">
+    <h2>All your bookmarks</h2>
+    <%= link_to "Add a new bookmark", new_list_bookmark_path(@list), class: "btn btn-flat" %>
+  </div>
 
-<p>All your bookmarks</p>
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li>
-      <%= bookmark.comment %>
-      <%= bookmark.movie.title %> || <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
-      <img src=<%= bookmark.movie.poster_url %> alt="<%= bookmark.movie %>">
-      <%= bookmark.movie.overview %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Add a new bookmark", new_list_bookmark_path(@list) %>
-<%= link_to "Back to all lists", lists_path %>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @list.bookmarks.each do |bookmark| %>
+      <%= render 'shared/movieCard', bookmark: bookmark %>
+    <% end %>
+  </div>
+</div>
