@@ -1,0 +1,14 @@
+.custom-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+
+  .form {
+    flex-grow: 1;
+    padding: 20px 20px;
+    margin: 0 10px;
+    background-color: #fff;
+    border: #DFDFDF solid 2px;
+    border-radius: 2px;
+  }
+}

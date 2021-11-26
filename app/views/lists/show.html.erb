@@ -21,10 +21,12 @@
       </ul>
     </div>
 
-    <%= simple_form_for [@list, @review] do |f| %>
-      <%= f.input :comments %>
-      <%= f.input :rating %>
-      <%= f.submit %>
-    <% end %>
+    <div class="form">
+      <%= simple_form_for [@list, @review] do |f| %>
+        <%= f.input :comments %>
+        <%= f.input :rating %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
 </div>
